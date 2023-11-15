@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using beadando.Data;
 using beadando.Models;
+using NuGet.Protocol;
 
 namespace beadando.Controllers
 {
@@ -22,7 +23,8 @@ namespace beadando.Controllers
         // GET: Toys
         public async Task<IActionResult> Index()
         {
-            var storeContext = _context.Toys.Include(t => t.Category);
+            var storeContext = _context.Categories.Include(c => c.Toys);
+            //return 3 lists, for 3 categories
             return View(await storeContext.ToListAsync());
         }
 
@@ -65,6 +67,7 @@ namespace beadando.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            Console.WriteLine(ModelState.ToJson());
             ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "ID", toy.CategoryID);
             return View(toy);
         }

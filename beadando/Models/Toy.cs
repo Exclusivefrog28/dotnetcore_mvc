@@ -9,5 +9,5 @@ public class Toy
     public string? Image { get; set; }
     public int CategoryID { get; set; }
     
-    public Category Category { get; set; }
+    public virtual Category? Category { get; set; }
 }
