@@ -551,11 +551,6 @@ C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\beadando.
 C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\beadando.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\beadando.RazorAssemblyInfo.cache
 C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\beadando.RazorAssemblyInfo.cs
-C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\staticwebassets\msbuild.beadando.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\staticwebassets\msbuild.build.beadando.props
-C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.beadando.props
-C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.beadando.props
-C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\excf28\RiderProjects\dotnetcore_mvc\beadando\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
