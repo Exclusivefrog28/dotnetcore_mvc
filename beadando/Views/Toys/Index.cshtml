@@ -18,17 +18,17 @@
         <div class="row g-3">
             @foreach (var item in category.Toys!)
             {
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 card m-3">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 card m-3 d-flex flex-column justify-content-end">
                     <img src=@Html.DisplayFor(modelItem => item.Image) class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body flex-grow-0">
                         <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
                         <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body flex-grow-0">
                         <p class="card-text">@Html.DisplayFor(modelItem => item.Price)</p>
 
                     </div>
-                    <div class="card-body">
+                    <div class="card-body flex-grow-0">
                         <a class="card-link" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                         <a class="card-link" asp-action="Details" asp-route-id="@item.ID">Details</a> |
                         <a class="card-link" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
