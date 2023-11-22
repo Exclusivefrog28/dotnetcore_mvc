@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using beadando.Data;
 using beadando.Models;
+using Microsoft.AspNetCore.Authorization;
 using NuGet.Protocol;
 
 namespace beadando.Controllers
@@ -48,6 +49,7 @@ namespace beadando.Controllers
         }
 
         // GET: Toys/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "ID");
@@ -59,6 +61,7 @@ namespace beadando.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("ID,Title,Description,Price,Image,CategoryID")] Toy toy)
         {
             if (ModelState.IsValid)
