@@ -1,22 +1,45 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .background {
-  background: linear-gradient(#9198e5, #e66465);
+    background: linear-gradient(#ebbcbc, #e66465);
+}
+
+.cover-img {
+    filter: blur(5px);
+}
+
+.cover::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background: radial-gradient(circle at center, #000000aa 0%, transparent 40%);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-text {
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: var(--bs-white);
+    z-index: 2;
 }
