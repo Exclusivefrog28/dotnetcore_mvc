@@ -1,0 +1,44 @@
+@model IEnumerable<beadando.Models.Category>
+
+@{
+    ViewData["Title"] = "Játékok";
+}
+
+<div class="container-sm mt-3">
+    
+    <h1 class="display-6">Játékok</h1>
+
+    <p>
+        <a asp-action="Create">Hozzáadás</a>
+    </p>
+    <div class="container-sm">
+
+        @foreach (var category in Model)
+        {
+            <h2 class="display-6 fs-3">@Html.DisplayFor(modelItem => category.Title)</h2>
+            <p>@Html.DisplayFor(modelItem => category.Description)</p>
+            <div class="row g-3">
+                @foreach (var item in category.Toys!)
+                {
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 card m-3 d-flex flex-column justify-content-end border-radius">
+                        <img src=@Html.DisplayFor(modelItem => item.Image) class="card-img-top border-radius" alt="...">
+                        <div class="card-body flex-grow-0">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                        </div>
+                        <div class="card-body flex-grow-0">
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Price)</p>
+
+                        </div>
+                        <div class="card-body flex-grow-0">
+                            <a class="card-link" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a class="card-link" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            <a class="card-link" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+    </div>
+</div>
