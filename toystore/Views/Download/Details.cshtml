@@ -1,31 +1,33 @@
-@model beadando.Models.Downloadable
+@model Downloadable
 
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<div class="container-sm mt-3">
+    <h1>Részletek</h1>
 
-<div>
-    <h4>Downloadable</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Path)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Path)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <h4>Fájl</h4>
+        <hr/>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Név
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-2">
+                Cím
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Path)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Download" asp-route-id="@Model?.ID">Letöltés</a> |
+        <a asp-action="Index">Vissza</a>
+    </div>
 </div>

@@ -5,11 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container-sm mt-3">
-    <h1>Index</h1>
+    <h1>Letölthető fájlok</h1>
 
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
+    @if (TempData["message"] != null)
+    {
+        <p>@TempData["message"]</p>
+    }
+
+
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Create" class="btn btn-outline-success">Fájl feltöltése</a>
+    }
+
     <table class="table">
         <thead>
         <tr>
@@ -23,7 +31,8 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model){
+        @foreach (var item in Model)
+        {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
@@ -31,10 +40,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Path)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <td class="d-flex flex-row justify-content-end gap-4">
+                    <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-primary">Részletek</a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Törlés</a>
+                    }
                 </td>
             </tr>
         }
