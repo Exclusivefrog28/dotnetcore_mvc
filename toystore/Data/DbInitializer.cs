@@ -6,6 +6,12 @@ public class DbInitializer{
     public static void Initialize(StoreContext context){
         context.Database.EnsureCreated();
 
+        if (!context.Downloadables.Any()){
+            Downloadable file = new Downloadable{Title = "File", Path = "/"};
+            context.Downloadables.Add(file);
+            context.SaveChanges();
+        }
+
         if (context.Categories.Any()){
             // If the database has been seeded, there is nothing to do.
             return;
